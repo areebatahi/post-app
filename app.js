@@ -4,7 +4,7 @@ var profilePhotoInput = document.getElementById("profilePhotoInput");
 
 profilePhotoImg.addEventListener("click", function () {
     profilePhotoInput.click();
-});
+}); 
 
 profilePhotoInput.addEventListener("change", function (e) {
     var file = e.target.files[0];
