@@ -1,14 +1,38 @@
+body {
+    background: linear-gradient(120deg, #f9d5e5, #fff6f6);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
 #signUpFormContainer {
     margin: 0 auto !important;
     margin-top: 50px !important;
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 40px rgba(200, 51, 73, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: transform 0.3s ease-in-out;
 }
- 
+
+#signUpFormContainer:hover {
+    transform: translateY(-5px);
+}
+
 .text {
     color: #c83349 !important;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .bg-color {
-    background-color: #c83349 !important;
+    background: linear-gradient(135deg, #c83349, #f27121) !important;
+    border: none;
+    border-radius: 10px;
+    padding: 0.6rem 1.5rem;
+    font-weight: bold;
 }
 
 .hidden {
@@ -22,18 +46,30 @@
 
 * {
     font-family: RobotoSlab;
+    transition: all 0.3s ease-in-out;
 }
 
 .logo {
     width: 85px;
+    animation: popIn 1s ease;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
 .navbar {
-    background-color: #c83349 !important;
+    background: linear-gradient(to right, #c83349, #f27121) !important;
+    border-bottom: 2px solid #f9d5e5;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .navbar-brand {
-    color: #f9d5e5;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 2px #c83349;
 }
 
 .navbar-brand:hover {
@@ -46,7 +82,12 @@
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
-    /* Add a pointer cursor to indicate it's clickable */
+    border: 3px solid #fff;
+    box-shadow: 0 0 10px rgba(249, 213, 229, 0.8);
+}
+
+.profile-photo:hover {
+    transform: scale(1.1);
 }
 
 .profile-photo img {
@@ -58,66 +99,96 @@
 
 .postBtn,
 .editBtn {
-    background-color: #c83349;
+    background: linear-gradient(to right, #c83349, #f27121);
     color: #fff;
+    border: none;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(200, 51, 73, 0.3);
 }
 
 .postBtn:hover,
 .editBtn:hover {
-    background-color: #f9d5e5;
+    background-color: #fff;
     color: #c83349;
     border: 2px solid #c83349;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(200, 51, 73, 0.4);
 }
-.deleteBtn{
+
+.deleteBtn {
     background-color: #c83349;
     border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 12px;
 }
+
 .deleteBtn:hover {
-    background-color: #f9d5e5;
+    background-color: #fff;
+    color: #c83349;
     border: 2px solid #c83349;
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(200, 51, 73, 0.3);
 }
 
 .swal2-confirm {
     background-color: #c83349;
+    border-radius: 10px;
+    padding: 0.6rem 1.5rem;
+    font-weight: bold;
 }
 
 .images {
     justify-content: space-around;
+    gap: 10px;
+    flex-wrap: wrap;
+    display: flex;
+    padding-top: 10px;
 }
 
 .bg-img {
-    height: 50px;
-    width: 50px;
-    border-radius: 5px;
+    height: 55px;
+    width: 55px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.bg-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(200, 51, 73, 0.5);
 }
 
 .selectedImg {
     border: 2px solid #c83349;
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgba(200, 51, 73, 0.6);
 }
 
 .name-time {
     font-style: normal;
     font-weight: bold;
-
+    color: #c83349;
+    font-size: 1.1rem;
 }
 
 .time {
     font-size: 12px;
-    color: #666;
+    color: #999;
 }
 
 .form-control,
 #signUpFormContainer {
     border: 1px solid #c83349;
-}
-
-#signUpFormContainer {
-    box-shadow: 5px 5px 10px #f9d5e5;
+    border-radius: 10px;
 }
 
 .form-control:focus {
-    box-shadow: 10px 10px 15px #f9d5e5;
-    border: 1px #c83349 solid;
+    box-shadow: 0 0 12px #f9d5e5;
+    border: 1px solid #c83349;
+    outline: none;
 }
 
 #gridCheck {
@@ -128,10 +199,12 @@
     background-color: #c83349;
     box-shadow: none;
 }
-.imgEdit{
+
+.imgEdit {
     width: 30px;
 }
-.editBtnImg{
+
+.editBtnImg {
     position: absolute;
     right: 0px;
 }
